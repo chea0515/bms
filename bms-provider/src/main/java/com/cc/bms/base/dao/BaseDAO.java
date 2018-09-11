@@ -10,6 +10,13 @@ public interface BaseDAO {
     <T, V> T select(V v);
 
     /**
+     * count bean total num.
+     * @param <V> input params.
+     * @return Integer.
+     */
+    <V> Integer count(V v);
+
+    /**
      * save bean .
      * @param <V> input params.
      * @return Integer.

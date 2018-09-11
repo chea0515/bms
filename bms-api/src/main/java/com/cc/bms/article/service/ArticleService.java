@@ -10,6 +10,10 @@ public interface ArticleService {
 
     List<Article> getArticleList(Article article);
 
+    List<Article> getArticlePage(Article article, Integer pageNum, Integer pageSize);
+
+    Integer getArticleCount(Article article);
+
     Article getArticle(Article article);
 
     Integer saveArticle(Article article);

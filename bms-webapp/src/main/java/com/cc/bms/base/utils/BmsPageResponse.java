@@ -1,25 +1,27 @@
 package com.cc.bms.base.utils;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.util.CollectionUtils;
 
-@Data
-public class BmsPageResponse {
+import java.util.Collection;
+import java.util.LinkedList;
+
+@Getter
+public class BmsPageResponse<T> {
     private Boolean success = true;
-    private Page page;
+    private Page<T> page = new Page<>();
 
     @Getter
     @Setter
     private static class Page<T> {
-        private Integer pageNo;
+        private Integer pageNum;
         private Integer pageSize;
         private Integer totalCount;
-        private Integer totalPage;
-        private T result;
+        private Collection<T> result;
 
-        public Page withPageNo(Integer pageNo) {
-            this.pageNo = pageNo;
+        public Page withPageNum(Integer pageNum) {
+            this.pageNum = pageNum;
             return this;
         }
 
@@ -33,9 +35,22 @@ public class BmsPageResponse {
             return this;
         }
 
-        public Page withResult(T result) {
-            this.result = result;
+        public Page withResult(Collection<T> result) {
+            if(CollectionUtils.isEmpty(result)) {
+                this.result= new LinkedList<>();
+            } else {
+                this.result = result;
+            }
             return this;
+        }
+
+        public Integer getTotalPage() {
+            if(totalCount > 0 && pageSize > 0) {
+                return (totalCount % pageSize == 0) ?
+                        (totalCount / pageSize) : (totalCount / pageSize) + 1;
+
+            }
+            return 0;
         }
     }
 }

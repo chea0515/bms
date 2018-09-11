@@ -16,9 +16,29 @@ public class ArticleServiceManager {
     @Reference(version = "1.0.1")
     private ArticleService articleService;
 
-    public List<ArticleVO> getArticle(ArticleVO articleVO) throws BmsException {
+    public List<ArticleVO> getArticleAllList() throws BmsException {
         try{
             List<Article> allArticleList = articleService.getAllArticleList();
+            return null;
+        } catch (Exception ex) {
+            log.error("");
+            throw new BmsException(ex);
+        }
+    }
+
+    public List<ArticleVO> getArticleList(ArticleVO articleVO) throws BmsException {
+        try{
+            List<Article> allArticleList = articleService.getArticleList(null);
+            return null;
+        } catch (Exception ex) {
+            log.error("");
+            throw new BmsException(ex);
+        }
+    }
+
+    public List<ArticleVO> getArticlePage(ArticleVO articleVO, Integer pageNo, Integer pageSize) throws BmsException {
+        try{
+            List<Article> articlePage = articleService.getArticlePage(null, pageNo, pageSize);
             return null;
         } catch (Exception ex) {
             log.error("");

@@ -4,6 +4,8 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.cc.bms.article.dao.ArticleDAO;
 import com.cc.bms.article.model.Article;
 import com.cc.bms.article.service.ArticleService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,6 +30,19 @@ public class ArticleServiceImpl implements ArticleService {
         List<Article> articleList = articleDAO.select(article);
         System.out.println(articleList);
         return articleList;
+    }
+
+    @Override
+    public List<Article> getArticlePage(Article article, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Article> list = articleDAO.select(article);
+        PageInfo pageInfo = new PageInfo(list);
+        return pageInfo.getList();
+    }
+
+    @Override
+    public Integer getArticleCount(Article article) {
+        return null;
     }
 
     @Override
