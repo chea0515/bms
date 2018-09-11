@@ -1,0 +1,20 @@
+server:
+  port: 9002
+
+spring:
+  # dubbo
+  dubbo:
+    application.name: bms-webapp
+    registry.address: zookeeper://192.168.91.128:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.cc.bms.*.service.impl
+  # log spring profile
+  profiles:
+    active: dev
+
+# log
+logging:
+  level: info
+  config: classpath:logback-spring.xml
