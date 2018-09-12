@@ -14,7 +14,7 @@ public class BmsPageResponse<T> {
 
     @Getter
     @Setter
-    private static class Page<T> {
+    public static class Page<T> {
         private Integer pageNum;
         private Integer pageSize;
         private Integer totalCount;

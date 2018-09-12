@@ -20,14 +20,18 @@ import java.util.List;
 @RequestMapping(value = { "/bms/api/article" })
 public class ArticleController {
 
+    private final ArticleServiceManager articleService;
+
     @Autowired
-    private ArticleServiceManager articleService;
+    public ArticleController(ArticleServiceManager articleService) {
+        this.articleService = articleService;
+    }
 
     @PostMapping(value = "/alllist")
-    public BmsResponse allList() {
+    public BmsResponse<List<ArticleVO>> allList() {
         log.info("article all list start:");
         try {
-            BmsResponse response = new BmsResponse<>();
+            BmsResponse<List<ArticleVO>> response = new BmsResponse<>();
             List<ArticleVO>  allList = articleService.getArticleAllList();
             response.setResult(allList);
             return response;
@@ -37,14 +41,18 @@ public class ArticleController {
         }
     }
 
-    @PostMapping(value = "/alllist")
-    public BmsPageResponse list(@RequestBody ArticleListRequest request) {
+    @SuppressWarnings({"unchecked"})
+    @PostMapping(value = "/list")
+    public BmsPageResponse<ArticleVO> list(@RequestBody ArticleListRequest request) {
         log.info("article list start:");
         try {
-            BmsResponse response = new BmsResponse<>();
+            BmsPageResponse<ArticleVO> response = new BmsPageResponse<>();
             List<ArticleVO>  allList = articleService.getArticleList(null);
-            response.setResult(allList);
-            return null;
+            response.getPage()
+                    .withPageNum(request.getPageNum())
+                    .withPageSize(request.getPageSize())
+                    .withResult(allList);
+            return response;
         } catch (BmsException ex) {
             log.error("article list error:{}", ex.getMessage());
             throw new BmsException(ex);

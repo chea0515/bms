@@ -13,5 +13,5 @@ public class ArticleListRequest {
     @NotEmpty
     private Integer pageSize;
     @NotEmpty
-    private Integer pageNo;
+    private Integer pageNum;
 }
