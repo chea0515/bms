@@ -29,7 +29,7 @@ public class DynamicDataSourceContextHolder {
     }
 
     public static void remove() {
-        contextHolder.remove();;
+        contextHolder.remove();
     }
 
     public static Boolean contains(String dataSourceId) {
