@@ -73,7 +73,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
     }
 
     private void initCustomDataSource(Environment environment) {
-        RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
+        RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(environment, "my.datasource.");
         String[] dataSourcePrefixs = propertyResolver.getProperty("names").split(",");
         Map<String, Object> dataSourceMap;
         DataSource dataSource;
