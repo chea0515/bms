@@ -1,4 +1,4 @@
-package com.cc.bms.base.utils;
+package com.cc.utils;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 @Getter
-public class BmsPageResponse<T> {
+public class PageResult<T> {
     private Boolean success = true;
     private Page<T> page = new Page<>();
 

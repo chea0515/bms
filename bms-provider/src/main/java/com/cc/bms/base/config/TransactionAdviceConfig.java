@@ -1,5 +1,6 @@
 package com.cc.bms.base.config;
 
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
@@ -12,6 +13,7 @@ import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
 import org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource;
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 
+@Aspect
 @Configuration
 public class TransactionAdviceConfig {
     private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.cc.bms.*.service..*.*(..))";
