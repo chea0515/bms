@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 @Getter
-public class PageResult<T> {
+public class ResultPage<T> {
     private Boolean success = true;
     private Page<T> page = new Page<>();
 

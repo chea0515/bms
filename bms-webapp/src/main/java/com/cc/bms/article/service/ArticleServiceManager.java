@@ -28,7 +28,7 @@ public class ArticleServiceManager {
 
     public List<ArticleVO> getArticleList(ArticleVO articleVO) throws BmsException {
         try{
-            List<Article> allArticleList = articleService.getArticleList(null);
+            List<Article> articleList = articleService.getArticleList(null);
             return null;
         } catch (Exception ex) {
             log.error("");

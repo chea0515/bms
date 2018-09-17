@@ -1,6 +1,7 @@
 package com.cc.bms.base.config;
 
 import com.cc.bms.base.exception.BmsException;
+import com.cc.utils.ResultError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,14 +19,16 @@ public class BmsControllerAdvice {
     }
 
     @ExceptionHandler(RuntimeException.class)
-    @ResponseBody public String runtimeExceptionHandler(RuntimeException ex) {
+    @ResponseBody
+    public ResultError runtimeExceptionHandler(RuntimeException ex) {
         log.error("RuntimeException:{}", ex.getMessage());
-        return "";
+        return ResultError.error(500, ex.getMessage());
     }
 
     @ExceptionHandler(BmsException.class)
-    @ResponseBody public String bmsExceptionHandler(BmsException ex) {
+    @ResponseBody
+    public ResultError bmsExceptionHandler(BmsException ex) {
         log.error("BmsException:{}", ex.getMessage());
-        return "";
+        return ResultError.error(500, ex.getMessage(), "BmsException");
     }
 }

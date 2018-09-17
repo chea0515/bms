@@ -4,8 +4,8 @@ import com.cc.bms.article.service.ArticleServiceManager;
 import com.cc.bms.article.vo.ArticleListRequest;
 import com.cc.bms.article.vo.ArticleVO;
 import com.cc.bms.base.exception.BmsException;
-import com.cc.utils.PageResult;
 import com.cc.utils.Result;
+import com.cc.utils.ResultPage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,12 +20,8 @@ import java.util.List;
 @RequestMapping(value = { "/bms/api/article" })
 public class ArticleController {
 
-    private final ArticleServiceManager articleService;
-
     @Autowired
-    public ArticleController(ArticleServiceManager articleService) {
-        this.articleService = articleService;
-    }
+    private ArticleServiceManager articleService;
 
     @PostMapping(value = "/alllist")
     public Result<List<ArticleVO>> allList() {
@@ -43,10 +39,10 @@ public class ArticleController {
 
     @SuppressWarnings({"unchecked"})
     @PostMapping(value = "/list")
-    public PageResult<ArticleVO> list(@RequestBody ArticleListRequest request) {
+    public ResultPage<ArticleVO> list(@RequestBody ArticleListRequest request) {
         log.info("article list start:");
         try {
-            PageResult<ArticleVO> response = new PageResult<>();
+            ResultPage<ArticleVO> response = new ResultPage<>();
             List<ArticleVO>  allList = articleService.getArticleList(null);
             response.getPage()
                     .withPageNum(request.getPageNum())
