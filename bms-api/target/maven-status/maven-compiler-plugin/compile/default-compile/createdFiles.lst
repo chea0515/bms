@@ -1,0 +1,3 @@
+com\cc\bms\article\model\Article.class
+com\cc\bms\article\service\ArticleService.class
+com\cc\bms\base\entity\BaseEntity.class

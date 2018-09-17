@@ -1,0 +1,11 @@
+com\cc\bms\base\BmsConsumerApplication.class
+com\cc\bms\article\service\ArticleServiceManager.class
+com\cc\bms\article\controller\ArticleController.class
+com\cc\bms\base\config\BmsControllerAdvice.class
+com\cc\utils\Result.class
+com\cc\utils\ResultError.class
+com\cc\bms\base\exception\BmsException.class
+com\cc\bms\article\vo\ArticleListRequest.class
+com\cc\utils\ResultPage$Page.class
+com\cc\utils\ResultPage.class
+com\cc\bms\article\vo\ArticleVO.class

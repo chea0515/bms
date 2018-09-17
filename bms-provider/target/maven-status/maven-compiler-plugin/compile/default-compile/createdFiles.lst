@@ -1,0 +1,10 @@
+com\cc\bms\base\config\db\DynamicDataSourceContextHolder.class
+com\cc\bms\base\config\TransactionAdviceConfig.class
+com\cc\bms\base\BmsProviderApplication.class
+com\cc\bms\article\service\impl\ArticleServiceImpl.class
+com\cc\bms\base\dao\BaseDAO.class
+com\cc\bms\article\dao\ArticleDAO.class
+com\cc\bms\base\config\db\DynamicDataSourceAspect.class
+com\cc\bms\base\config\db\DynamicDataSourceRegister.class
+com\cc\bms\base\config\db\DynamicDataSource.class
+com\cc\bms\base\config\db\TargetDataSource.class

@@ -4,8 +4,8 @@ server:
 spring:
   # dubbo
   dubbo:
-    application.name: bms-webapp
-    registry.address: zookeeper://192.168.91.128:2181
+    application.name: bms-consumer
+    registry.address: zookeeper://192.168.88.128:2181
     protocol:
       name: dubbo
       port: 20880
