@@ -29,6 +29,6 @@ public class BmsControllerAdvice {
     @ResponseBody
     public ResultError bmsExceptionHandler(BmsException ex) {
         log.error("BmsException:{}", ex.getMessage());
-        return ResultError.error(500, ex.getMessage(), "BmsException");
+        return ResultError.error(500, ex.getMessage());
     }
 }

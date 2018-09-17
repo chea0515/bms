@@ -1,6 +1,5 @@
 package com.cc.utils;
 
-import com.sun.org.apache.xml.internal.serialize.LineSeparator;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,9 +19,5 @@ public class ResultError {
 
     public static ResultError error(Integer code, String message) {
         return new ResultError(code, message);
-    }
-
-    public static ResultError error(Integer code, String message, String type) {
-        return new ResultError(code, type + ":" + LineSeparator.Web + message);
     }
 }
