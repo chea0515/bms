@@ -17,7 +17,7 @@
     <modules>
         <module>bms-api</module>
         <module>bms-provider</module>
-        <module>bms-webapp</module>
+        <module>bms-consumer</module>
     </modules>
 
     <properties>

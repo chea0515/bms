@@ -10,7 +10,7 @@
         <version>${bms.version}</version>
     </parent>
 
-    <artifactId>bms-webapp</artifactId>
+    <artifactId>bms-consumer</artifactId>
 
     <dependencies>
         <dependency>
