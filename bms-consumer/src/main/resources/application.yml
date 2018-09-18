@@ -9,7 +9,7 @@ spring:
     protocol:
       name: dubbo
       port: 20880
-    scan: com.cc.bms.*.service.impl
+    scan: com.cc.bms
   # log spring profile
   profiles:
     active: dev

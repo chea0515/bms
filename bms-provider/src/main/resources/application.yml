@@ -15,7 +15,7 @@ spring:
     protocol:
       name: dubbo
       port: 20880
-    scan: com.cc.bms.*.service.impl
+    scan: com.cc.bms
   # log spring profile
   profiles:
     active: dev
@@ -32,8 +32,8 @@ my.datasource:
 
 # mybatis
 mybatis:
-  configLocation: classpath:mybatis-config.xml
-  mapperLocations: classpath:com/cc/bms/*/*DAO.xml
+  configLocation: classpath:/mybatis-config.xml
+  mapperLocations: classpath:/com/cc/bms/mapper/**/*DAO.xml
   typeAliasesPackage: com.cc.bms.*.model
 
 # pagehelper
@@ -45,5 +45,5 @@ pagehelper:
 
 # log
 logging:
-  level: info
+  level: debug # info, debug, error
   config: classpath:logback-spring.xml

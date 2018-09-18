@@ -1,11 +1,9 @@
-package com.cc.bms.base;
+package com.cc.bms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.cc.bms")
 public class BmsConsumerApplication {
 
     public static void main(String[] args) {

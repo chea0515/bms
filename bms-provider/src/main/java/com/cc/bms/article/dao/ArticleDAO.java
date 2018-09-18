@@ -1,8 +1,8 @@
 package com.cc.bms.article.dao;
 
 import com.cc.bms.base.dao.BaseDAO;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
-//@Repository
+@Mapper
 public interface ArticleDAO extends BaseDAO {
 }

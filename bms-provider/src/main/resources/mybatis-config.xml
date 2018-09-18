@@ -22,6 +22,7 @@
 
     <typeAliases>
         <typeAlias type="com.cc.bms.article.model.Article" alias="Article" />
+        <!--<package name="" />-->
     </typeAliases>
 
 </configuration>

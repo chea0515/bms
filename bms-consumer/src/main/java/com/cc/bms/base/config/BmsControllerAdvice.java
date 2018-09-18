@@ -1,7 +1,7 @@
 package com.cc.bms.base.config;
 
 import com.cc.bms.base.exception.BmsException;
-import com.cc.utils.ResultError;
+import com.cc.util.web.ResultError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;

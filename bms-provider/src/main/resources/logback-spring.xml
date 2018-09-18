@@ -34,7 +34,8 @@
     </appender>
 
     <!-- 日志输出级别 -->
-    <root level="INFO">
+    <!-- <root level="INFO, DEBUG, ERROR"> -->
+    <root level="DEBUG">
         <appender-ref ref="STDOUT" />
     </root>
 
